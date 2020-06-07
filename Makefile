@@ -1,13 +1,10 @@
+obj-m := hello.o
 
-# disabled (not compiling on 5.0+): sbull snull short
-SUBDIRS =  misc-progs misc-modules \
-           skull scull scullc scullp sculld scullv shortprint simple tty \
-	   pci usb lddbus
 
-all: subdirs
+KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 
-subdirs:
-	for n in $(SUBDIRS); do $(MAKE) -C $$n || exit 1; done
+all hello:
+	$(MAKE) -C $(KERNELDIR) M=$(shell pwd) modules
 
 clean:
-	for n in $(SUBDIRS); do $(MAKE) -C $$n clean; done
+	rm -rf *.o *.ko *.mod.c

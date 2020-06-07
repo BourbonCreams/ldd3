@@ -10,9 +10,28 @@ The examples were stripped down to include a single `Hello World` example to sho
 # Instructions
 The following instructions will clone this repo, compile the code and show you how to insert and remove a Linux kernel module:
 
-1. Clone the repo with: `git clone https://github.com/BourbonCreams/ldd3`
-2. Move into the directory and compile the example code: `cd ldd3 && make`
-3. Insert the Linux kernel module from Terminal: `sudo insmod hello.ko`
-4. Verify that the kernel module was inserted correctly: `tail /var/log/syslog`
-5. Remove the Linux kernel module from Terminal: `sudo rmmod hello.ko`
-6. Verify that the kernel module was removed correctly: `tail /var/log/syslog`
+1. Clone the repo with:
+```
+git clone https://github.com/BourbonCreams/ldd3
+```
+2. Move into the directory and compile the example code:
+```
+cd ldd3 && make
+```
+3. Insert the Linux kernel module from Terminal:
+```
+sudo insmod hello.ko
+```
+4. Verify that the kernel module was inserted correctly:
+```
+tail /var/log/syslog
+```
+5. Remove the Linux kernel module from Terminal:
+```
+sudo rmmod hello.ko
+```
+6. Verify that the kernel module was removed correctly:
+```
+tail /var/log/syslog
+```
+
